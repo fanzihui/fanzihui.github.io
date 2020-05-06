@@ -1,5 +1,5 @@
 ---
-title: IDEA maven 多模块启动
+title: IDEA maven多模块启动
 date: 2020-03-12
 author: 范了饭饭
 categories:
@@ -33,13 +33,3 @@ tags:
 ```
 
 重新启动 IDEA, 打开项目即可
-
-
-
-cb5e9a84c6aacfe880d90d65538bf5510df19a4b 
-
-
-https://leecason.github.io/
-
-
-https://fanzihui.github.io/
