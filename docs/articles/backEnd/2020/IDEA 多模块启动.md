@@ -1,5 +1,5 @@
 ---
-title: IDEA多模块启动
+title: IDEA 多模块启动
 date: 2020-03-12
 author: 范了饭饭
 categories:
