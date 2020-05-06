@@ -1,14 +1,14 @@
 ---
-title: IDEA maven多模块启动
+title: IDEA多模块启动
 date: 2020-03-12
 author: 范了饭饭
 categories:
  - backEnd
 tags: 
- - Maven
+ - IDEA
 ---
 
-## 1. 找到.idea下面的workspace.xml
+找到.idea下面的workspace.xml
 
 在文件里添加以下代码
 
