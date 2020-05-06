@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'FanLE',
+  title: 'FANLE',
   description: '最美的相遇, 不言过往. 最好的离别, 不问归期',
   locales: { '/': { lang: 'zh' } },
   head: [
@@ -31,7 +31,7 @@ module.exports = {
     // 文档更新时间
     lastUpdated: false,
     authorAvatar: '/avatar.png',
-    author: 'FanLE',
+    author: 'FANLE',
     startYear: '2019',
     logo: '/logo.png',
     // 搜索设置
