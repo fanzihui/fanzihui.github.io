@@ -16,9 +16,18 @@ sidebar: false
 
 #### 我的业余生活
 
+  - 跑步
+
+  - 篮球
+
+  - 滑板
+  
+  - 做饭 
+
+
 ***
 
-个人博客：[**范了饭饭**](https://fanle.netlify.com) 
+个人博客：[**FANLE**](https://fanzihui.github.io/) 
 
 ***
 
