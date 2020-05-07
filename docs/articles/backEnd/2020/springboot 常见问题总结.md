@@ -8,10 +8,15 @@ tags:
  - SpringBoot
 ---
 
-1. 连接数据库时时区问题:
+#### 1. 连接数据库时时区问题:
+```
+
 jdbc:mysql://localhost:3306/mp_student?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=false
 
-2. 常见的包分类
+```
+
+#### 2. 常见的包分类
+```
 	java
 		config      存放Java配置
 		component   存放组件
@@ -26,15 +31,17 @@ jdbc:mysql://localhost:3306/mp_student?serverTimezone=GMT%2B8&useUnicode=true&ch
     static      静态文件
     theme       主题文件
     application.yml   基础配置文件
-3. 常用的框架
+```
+#### 3. 常用的框架
 	mybatis plus   数据库访问调用
 	druid    设置数据库连接池
 	swagger2 生成接口文档
 	shiro  角色权限管理
 
-4. shiro 授权时类型无法转换,请注释掉 pom.xml spring-boot-devtools 这个依赖, 原因是 ClassLoader类加载器的不同导致的类型转换异常。
+#### 4. shiro 授权时类型无法转换,请注释掉 pom.xml spring-boot-devtools 这个依赖, 原因是 ClassLoader类加载器的不同导致的类型转换异常。
 
-5. https 设置
+#### 5. https 设置
+```
 // 生成证书
 keytool -genkeypair -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048  -keystore keystore.p12 -validity 3650
 // application.yml 配置 ssl
@@ -45,9 +52,12 @@ server:
     key-store-type: PKCS12
     key-alias: tomcat
     key-store-password: 123456
+```
 
-6. 整合Swagger-UI
+#### 6. 整合Swagger-UI
 添加依赖
+
+```
 <!--Swagger-UI API文档生产工具-->
 <dependency>
   <groupId>io.springfox</groupId>
@@ -90,14 +100,14 @@ public class Swagger2Config {
                 .build();
     }
 }
-
-
-7. docker pull 超时解决方法
+```
+#### 7. docker pull 超时解决方法
+```
 vim /etc/hosts
 100.24.246.89 registry-1.docker.io
-
-
-8. github windows 设置
+```
+#### 8. github windows 设置
+```
 用户名：
 $ git config --global user.name "fanfan"
 
@@ -106,48 +116,55 @@ $ git config --global user.email "1025537699@qq.com"
 
 记住提交的邮箱及密码：
 $ git config --global credential.helper store
+```
 
-9. LocalDateTime 时区问题
+#### 9. LocalDateTime 时区问题
+```
 修改application.yml 中的MySQL 时区
 url: jdbc:mysql://127.0.0.1:3306/warehouse?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=Hongkong&useSSL=false
+```
 
-
-10.  //密码 下面这句话输出时让属性显示不出来
+#### 10.  //密码 下面这句话输出时让属性显示不出来
+```
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+```
 
-
-11. shiro 权限下未登录时候返回json数据
+#### 11. shiro 权限下未登录时候返回json数据
 
   注意返回的一定是JSON.toJSONString()格式
 
-12. fastjson 中空值无法保存问题
+#### 12. fastjson 中空值无法保存问题
+```
 String jsonStr = JSON.toJSONString(json,SerializerFeature.WriteMapNullValue);
 
 转换各种类型: https://blog.csdn.net/john1337/article/details/76275797
+```
 
-13. tomcat 部署时候出现 websocket 问题
+#### 13. tomcat 部署时候出现 websocket 问题
 
 
-14. 单点登录问题
+#### 14. 单点登录问题
   注意使用的Cache 
 
-16. RequestBody RequestParam 区别
+#### 16. RequestBody RequestParam 区别
 请求包json 和 表单区别
 
-17. mssql 版本与 LocalDateTime 问题
+#### 17. mssql 版本与 LocalDateTime 问题
+```
 升级mssql 版本
 <dependency>
   <groupId>com.microsoft.sqlserver</groupId>
   <artifactId>mssql-jdbc</artifactId>
   <version>8.2.0.jre8</version>
 </dependency>
+```
+
+#### 18. shiro rememberme记住我
 
 
-18. shiro rememberme记住我
-
-
-19. fastjson 数组转换
+#### 19. fastjson 数组转换
+```
 eg: [{name: "fanfan"}]
 
 转换：  JSONArray array =  JSONArray.parseArray(msg.toString());
@@ -171,9 +188,11 @@ eg: {name: "fanfan"}
 
 转换为实体:  ReceiveParam receiveParam = JSON.parseObject(msg.toString(),ReceiveParam.class);
 
+```
 
-20. Mybatis plus - 映射字段时排除不必要的字段，忽略字段
+#### 20. Mybatis plus - 映射字段时排除不必要的字段，忽略字段
 
+```
 1、声明该字段是 transient 的
 private transient  Integer a;
 1
@@ -183,13 +202,13 @@ private static Integer a;
 3、通过注解声明该字段不是一个数据库表里面的字段
 @TableField(exist = false)
 private transient  Integer a;
+```
 
-
-21. druid 无法打开
+#### 21. druid 无法打开
 去掉账号和密码即可打开
 
-22. netty 接收字段长度太长
-
+#### 22. netty 接收字段长度太长
+```
 server:
     .option(ChannelOption.SO_BACKLOG, 65535)
 
@@ -198,10 +217,13 @@ server:
 NettyServerHandlerInitializer:
 
     .addLast(new DelimiterBasedFrameDecoder(65535,delimiter))
+```
 
-23. mvn clean package -DskipTests
+#### 23. mvn clean package -DskipTests
 
-24. 出现左连接为 null 是可以使用查询语句:
+#### 24. 出现左连接为 null 是可以使用查询语句:
+
+```
 eg:
 
 select
@@ -234,5 +256,5 @@ select
           )
           
         ORDER BY p.StateFlag desc,pi.Ward asc, pi.BedNo asc
-
+```
 
