@@ -258,3 +258,32 @@ select
         ORDER BY p.StateFlag desc,pi.Ward asc, pi.BedNo asc
 ```
 
+## 25. 判断时间大小
+
+```
+import cn.hutool.core.date.DateUtil;
+import java.util.Date;
+
+public Boolean pumpTimeDiff(LocalDateTime t1,LocalDateTime t2){
+        System.out.println("t1: "+ t1);
+        System.out.println("t1: "+ t2);
+        Date dateT1 = DateUtil.parse(t1.toString().replaceAll("T"," "));
+        Date dateT2 = DateUtil.parse(t2.toString().replaceAll("T"," "));
+        if(dateT1.getTime() < dateT2.getTime()){
+            System.out.println("True,可插入数据库");
+            return true;
+        } else {
+            System.out.println("False,不可插入数据库");
+            return false;
+        }
+    }
+
+```
+
+## 26. 常见 SqlServer 语句
+
+```
+// 根据时间排序查询最新一条数据
+SELECT top 1 *  FROM Pump ORDER BY LastUploadTime desc;
+
+```
