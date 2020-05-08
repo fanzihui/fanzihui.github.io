@@ -3,7 +3,7 @@ title: Jenkins 安装使用
 date: 2020-03-05
 author: 范了饭饭
 categories:
- - backEnd
+ - 后端
 tags: 
  - 部署
  - docker

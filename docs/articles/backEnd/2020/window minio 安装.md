@@ -3,7 +3,7 @@ title: window minio 安装使用
 date: 2020-03-02
 author: 范了饭饭
 categories:
- - backEnd
+ - 后端
 tags: 
  - minio
  - 插件

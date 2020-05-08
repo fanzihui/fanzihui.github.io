@@ -3,7 +3,7 @@ title: linux docker 使用总结
 date: 2020-03-04
 author: 范了饭饭
 categories:
- - backEnd
+ - 后端
 tags: 
  - 部署
  - docker

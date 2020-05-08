@@ -3,7 +3,7 @@ title: MongoDB 安装教程
 date: 2020-03-27
 author: 范了饭饭
 categories:
- - backEnd
+ - 后端
 tags: 
  - 数据库
  - MongoDB

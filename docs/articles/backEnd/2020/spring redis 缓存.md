@@ -3,7 +3,7 @@ title: spring boot redis 缓存
 date: 2020-03-25
 author: 范了饭饭
 categories:
- - backEnd
+ - 后端
 tags: 
  - SpringBoot
  - Redis

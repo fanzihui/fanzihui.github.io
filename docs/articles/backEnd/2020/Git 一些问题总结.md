@@ -3,7 +3,7 @@ title: Git 一些问题总结
 date: 2020-03-11
 author: 范了饭饭
 categories:
- - backEnd
+ - 后端
 tags: 
  - 部署
  - Git
