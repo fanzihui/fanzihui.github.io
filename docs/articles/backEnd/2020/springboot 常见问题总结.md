@@ -287,3 +287,10 @@ public Boolean pumpTimeDiff(LocalDateTime t1,LocalDateTime t2){
 SELECT top 1 *  FROM Pump ORDER BY LastUploadTime desc;
 
 ```
+
+## 27. String 类型转换成 Boolean 类型
+
+```
+Boolean.parseBoolean(str)
+
+```
