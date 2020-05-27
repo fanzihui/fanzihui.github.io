@@ -21,6 +21,8 @@ tags:
 
 ### 正则匹配问题
 
+[Lua 正则入门](https://www.cnblogs.com/meamin9/p/4502461.html)
+
 ```lua
 
 -- 这是登陆时候产生的 token ，然后通过正则进行匹配产出
