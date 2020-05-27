@@ -12,7 +12,7 @@ SpringBoot配置HTTPS,并实现HTTP访问自动转HTTPS访问
 
 
 
-生成服务器端证书
+## 生成服务器端证书
 
 ```
 
@@ -21,7 +21,7 @@ keytool -genkey -alias tomcat -keyalg RSA -keystore ./server.keystore
 ```
 
 
-生成客户端证书
+## 生成客户端证书
 
 ```
 
@@ -30,7 +30,7 @@ keytool -keystore server.keystore -export -alias tomcat -file ./server.cer
 ```
 
 
-配置 springBoot
+## 配置 springBoot
 
 ```yml
 server:
@@ -44,7 +44,7 @@ server:
 
 ```
 
-配置 Config 
+## 配置 Config 
 
 ```java
 
@@ -97,7 +97,7 @@ public class SSLConfig {
 ```
 
 
-tip
+## tip
 
 ```
 // 查看端口
