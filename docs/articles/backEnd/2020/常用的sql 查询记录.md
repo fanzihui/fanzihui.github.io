@@ -87,5 +87,8 @@ truncate table [表名]
 
 ```
 
+利用分组查询不重复的数据
 
-
+```sql
+select FollowUp from table where FollowUp IS NOT NULL order by max(BillDate) desc;
+```
