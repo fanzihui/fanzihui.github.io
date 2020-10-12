@@ -8,3 +8,8 @@ tags:
  - Node
  - nuxt
 ---
+
+
+## Nuxt 生命周期
+
+![Alt text](https://segmentfault.com/img/remote/1460000022742269)
