@@ -64,6 +64,40 @@ middleware: 'baseurl',
 
 
 
+### tips
+
+1. 修改 默认启动端口
+
+```
+"server":{
+ "host":"127.0.0.1",
+ "port":"3304"
+}
+```
+
+2. middleware中的文件抛出错误
+
+```
+export default function({ store, error, redirect }) {
+  if (!store.state.user.userInfo.auth) {
+      error({
+       message: '没有权限哦！',
+      statusCode: 403
+     })
+  }
+}
+```
+
+3. asyncData 挂载时没有 this 对象
+
+
+4. 修改成后缀为 html 的页面
+```
+<a @click="$router.push(`/strA-${'参数id'}.html`)">去到页面A</a>
+
+```
+
+
 ### 相关插件地址
 
 [cookie-universal-nuxt](https://github.com/microcipcip/cookie-universal/tree/master/packages/cookie-universal-nuxt)
