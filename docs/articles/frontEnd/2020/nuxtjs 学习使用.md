@@ -97,6 +97,18 @@ export default function({ store, error, redirect }) {
 
 ```
 
+5. 获取当前路由名称和路径
+```
+获取当前路由名称
+
+$nuxt.$route.path
+获取当前路由路径
+
+$nuxt.$route.name
+
+```
+
+
 
 ### 相关插件地址
 
