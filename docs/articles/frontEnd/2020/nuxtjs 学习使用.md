@@ -108,7 +108,54 @@ $nuxt.$route.name
 
 ```
 
+6.  在子组件中不要再根元素上使用 v-if 而应该使用 v-show
 
+```
+// bad
+<div v-if="isVip">
+
+</div>
+```
+
+```
+//good
+<div>
+
+</div>
+```
+
+7. 遇到 Vue 错误时候
+   ```
+    [Vue warn]: The client-side rendered virtual DOM tree is not matching server-rendered content ( Nuxt / Vue / lerna monorepo )
+   ``
+   服务端与客户端渲染不一致的问题, 这个问题解决方法有两种
+  1. 使用 <clinet-only></clinet-only> 标签进行包裹,使其只在客户端加载
+  2. 查找代码,用 v-if 切换成 v-show 进行解决
+  3. 在 nuxt.config.js 中的 使用(未尝试)
+  ```
+  extend (config, ctx) {
+      config.resolve.symlinks = false
+    }
+  ```
+8. nuxt项目`Failed to execute 'appendChild' on 'Node'`，有没有什么好办法？
+
+  nuxt项目，刷新页面之后报错`Error while initializing app DOMException: Failed to execute 'appendChild' on 'Node': This node type does not support this method`.有没有什么好的解决办法？
+
+  
+
+  ```javascript
+  1.
+  一般在开发环境下，日志会有warning:The client-side rendered virtual DOM tree is not matching server-rendered content. This is likely caused by incorrect HTML markup, for example nesting block-level elements inside <p>, or missing <tbody>. Bailing hydration and performing full client-side render.
+
+  但是不影响使用，而且一般都是在刷新当前页面的时候才会报这个警告。但是一旦build发布到线上就会发生DOMException: Failed to execute 'appendChild' on 'Node': This node type does not support this method的问题。
+
+  我的解决方案是，直接在疑似产生The client-side rendered virtual DOM tree is not matching server-rendered content问题的代码上包裹一层<client-only>标签，直接不让后台渲染这部分代码就解决这个问题了
+
+  2. 使用 v-if 切换成 v-show
+  ```
+
+9. nuxt 项目 `TypeError: [nuxt] Error while mounting app: Cannot read property 'indexOf' of undefined`
+  同 第 8 问题 解决方法一致
 
 ### 相关插件地址
 
