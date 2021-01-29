@@ -157,6 +157,14 @@ $nuxt.$route.name
 9. nuxt 项目 `TypeError: [nuxt] Error while mounting app: Cannot read property 'indexOf' of undefined`
   同 第 8 问题 解决方法一致
 
+
+10. 网站根目录其实就是平常可见的 /static 目录
+  
+11. nuxt.js 关于页面中css 提取到 link的方法
+```
+那就是在nuxt.config.js下的build里添加 extractCSS: { allChunks: true }这句话
+```
+
 ### 相关插件地址
 
 [cookie-universal-nuxt](https://github.com/microcipcip/cookie-universal/tree/master/packages/cookie-universal-nuxt)
