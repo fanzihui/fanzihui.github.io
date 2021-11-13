@@ -127,16 +127,19 @@ $nuxt.$route.name
 7. 遇到 Vue 错误时候
    ```
     [Vue warn]: The client-side rendered virtual DOM tree is not matching server-rendered content ( Nuxt / Vue / lerna monorepo )
-   ``
-   服务端与客户端渲染不一致的问题, 这个问题解决方法有两种
-  1. 使用 <clinet-only></clinet-only> 标签进行包裹,使其只在客户端加载
-  2. 查找代码,用 v-if 切换成 v-show 进行解决
-  3. 在 nuxt.config.js 中的 使用(未尝试)
-  ```
-  extend (config, ctx) {
+
+    服务端与客户端渲染不一致的问题, 这个问题解决方法有两种
+
+    1. 使用 <clinet-only></clinet-only> 标签进行包裹,使其只在客户端加载
+    
+    2. 查找代码,用 v-if 切换成 v-show 进行解决
+
+    3. 在 nuxt.config.js 中的 使用(未尝试)
+    extend (config, ctx) {
       config.resolve.symlinks = false
     }
   ```
+
 8. nuxt项目`Failed to execute 'appendChild' on 'Node'`，有没有什么好办法？
 
   nuxt项目，刷新页面之后报错`Error while initializing app DOMException: Failed to execute 'appendChild' on 'Node': This node type does not support this method`.有没有什么好的解决办法？
