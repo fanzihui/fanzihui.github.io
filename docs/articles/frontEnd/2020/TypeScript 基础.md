@@ -46,7 +46,7 @@ function getUser(): void {
 // 联合类型
 let sex: string|number|boolean = 0
 
-// never 代表用不存在的值的类型
+// never 代表用不存在的值的类型,never类型—即为除去所有可能情况后剩下的类型
 // 返回never的函数必须存在无法达到的终点
 function error(message: string): never {
     throw new Error(message);
@@ -211,12 +211,144 @@ dog.bark();
 let sam = new Snake("Sammy the Python");
 sam.say('hello')
 
+
+// 抽象类, 经常作为基类使用,抽象类中的方法在派生类中必须实现
+abstract class Person {
+  constractor(public name: string) {}
+  printName(): void {
+    console.log('name' + this.name)
+  }
+  abstract printSay(): void;
+}
+// 派生类
+class Child extends Person {
+  constractor(name: string) {
+    super(name)
+  }
+
+  printSay(): void {
+    console.log('1231')
+  }
+}
+
+// 把类当做接口使用
+class Point {
+    x: number;
+    y: number;
+}
+
+interface Point3d extends Point {
+    z: number;
+}
+
+let point3d: Point3d = {x: 1, y: 2, z: 3};
 ```
 ### TypeScript 函数
+
+```typescript
+// 函数分为有名字函数 和 匿名函数
+
+// 为函数定义类型, 可选参数前面加 ? 
+function add(x: number = 10, y?: number): number {
+    return x + y;
+}
+
+let myAdd = function(x: number, y: number): number { return x + y; };
+
+// 函数中的 this 指向
+
+// 箭头函数中的 this 指向 类的本身
+
+// 重载, 在定义重载的时候，一定要把最精确的定义放在最前面。
+
+function Person (name: string, age: number, height?: number): void {}
+
+function Person (name: string, age: number, sex: boolean): void {}
+
+```
 ### TypeScript 泛型
+
+```typescript
+
+function identity<T>(arg: T): T {
+    return arg;
+}
+
+identity<string>('132132')
+
+// 类型推论,编译器自动确定类型
+let output = identity("myString");
+
+// 泛型类, 类的静态属性不能使用这个泛型类型
+interface Lengthwise {
+    length: number;
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+    console.log(arg.length);  // Now we know it has a .length property, so no more error
+    return arg;
+}
+
+```
+
 ### TypeScript 枚举
-### TypeScript type
-### TypeScript 继承
+
+```typescript
+enum Direction {
+    Up = 1,
+    Down,
+    Left,
+    Right
+}
+
+Direction.Up    // 1
+Direction.Left    // 3
+Direction.Right    // 4
+
+
+// 常数枚举
+const enum Enum {
+    A = 1,
+    B = A * 2
+}
+
+// 外部枚举
+declare enum Enum {
+    A = 1,
+    B,
+    C = 2
+}
+
+
+```
+
+### TypeScript 类型兼容性
+
+```typescript
+// 类型系统强制源函数的返回值类型必须是目标函数返回值类型的子类型。
+let x = () => ({name: 'Alice'});
+let y = () => ({name: 'Alice', location: 'Seattle'});
+
+x = y; // OK
+y = x; // Error because x() lacks a location property
+
+// 类型保护常用的是:  typeof  和 instanceof
+
+
+// 映射类型 及 类型推断
+type Record<K extends string, T> = {
+    [P in K]: T;
+}
+type ThreeStringProps = Record<'prop1' | 'prop2' | 'prop3', string>
+```
+
+### TypeScript 模块
+```typescript
+// 导出  export
+// 导入  import   || require
+```
+### TypeScript 命名空间
+### TypeScript 命名空间
 
 
 
